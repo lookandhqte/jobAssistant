@@ -10,7 +10,8 @@ import (
 	"os"
 	"strconv"
 	"time"
-	// _ "://github.com"
+
+	_ "github.com/lib/pq"
 )
 
 type Booking struct {
@@ -33,8 +34,8 @@ func main() {
 
 	dbHost := getEnv("DB_HOST", "localhost")
 	dbPort := getEnv("DB_PORT", "5432")
-	dbUser := getEnv("DB_USER", "postgres")
-	dbPass := getEnv("DB_PASSWORD", "postgres")
+	dbUser := getEnv("DB_USER", "root")
+	dbPass := getEnv("DB_PASSWORD", "root")
 	dbName := getEnv("DB_NAME", "contest")
 
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
